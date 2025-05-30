@@ -1,0 +1,65 @@
+Cómo funciona el event loop y cómo se gestionan operaciones asíncronas
+
+---
+
+1. JavaScript es single-threaded
+
+El motor de JavaScript (como V8) ejecuta todo el código en un único hilo principal. No maneja directamente I/O, temporizadores, ni eventos externos. Todo eso lo provee el entorno de ejecución (navegador o Node.js), no el lenguaje en sí.
+
+---
+
+2. El event loop no detecta operaciones asíncronas
+
+JavaScript no detecta ni clasifica funciones como asíncronas. Las funciones que generan asincronismo (como setTimeout, fetch, fs.readFile) son API externas proporcionadas por el entorno, no por el lenguaje base.
+
+---
+
+3. Delegación al sistema
+
+Cuando se llama a una API asíncrona, ocurre lo siguiente:
+
+- El motor de JS ejecuta la llamada como una función normal.
+- El entorno captura la operación y la delega al sistema operativo (ej: un timer, un syscall de I/O).
+- JavaScript continúa ejecutando el resto del código sin esperar el resultado.
+
+Ejemplo:
+
+setTimeout(() => {
+  console.log('Listo');
+}, 0);
+
+- setTimeout es una función del entorno (no del lenguaje).
+- El entorno registra un temporizador, y cuando expira, el callback se encola en la macro task queue.
+
+---
+
+4. Colas de tareas
+
+- Microtask queue: .then(), await, queueMicrotask
+- Macrotask queue: setTimeout, setInterval, I/O callbacks, setImmediate
+
+---
+
+5. Ciclo del event loop
+
+El event loop sigue este orden:
+
+1. Ejecuta todo el stack síncrono.
+2. Ejecuta todas las microtasks pendientes.
+3. Toma y ejecuta una tarea de la macrotask queue.
+4. Repite desde el paso 2.
+
+---
+
+6. Resumen del flujo
+
+1. JS ejecuta una API del entorno.
+2. El entorno registra la operación (I/O, timer...).
+3. Una vez resuelta, el callback es encolado.
+4. El event loop procesa la cola cuando el stack está libre.
+
+---
+
+Conclusión:
+
+El event loop no identifica operaciones asíncronas. Solo ejecuta callbacks ya encolados por el entorno, después de que las tareas hayan sido completadas por el sistema. La asincronía depende de la infraestructura externa al lenguaje.
