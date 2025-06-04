@@ -1,0 +1,27 @@
+[
+  {
+    "name": "pepe",
+    "age": 26,
+    "course": "Programacion Backend I"
+  },
+  {
+    "name": "maria",
+    "age": 26,
+    "course": "Programacion Backend I"
+  },
+  {
+    "name": "juan",
+    "age": 26,
+    "course": "Programacion Backend I"
+  },
+  {
+    "name": "juana",
+    "age": 26,
+    "course": "Programacion Backend I"
+  },
+  {
+    "name": "mario",
+    "age": 26,
+    "course": "Programacion Backend I"
+  }
+]
