@@ -1,0 +1,86 @@
+let users = [
+  {
+    id: 1,
+    first_name: "Ana",
+    last_name: "Gómez",
+    age: 28,
+    email: "ana.gomez@example.com",
+    gender: "Femenino",
+  },
+  {
+    id: 2,
+    first_name: "Luis",
+    last_name: "Martínez",
+    age: 34,
+    email: "luis.martinez@example.com",
+    gender: "Masculino",
+  },
+  {
+    id: 3,
+    first_name: "María",
+    last_name: "Fernández",
+    age: 22,
+    email: "maria.fernandez@example.com",
+    gender: "Femenino",
+  },
+  {
+    id: 4,
+    first_name: "Carlos",
+    last_name: "Ruiz",
+    age: 40,
+    email: "carlos.ruiz@example.com",
+    gender: "Masculino",
+  },
+  {
+    id: 5,
+    first_name: "Laura",
+    last_name: "Sánchez",
+    age: 26,
+    email: "laura.sanchez@example.com",
+    gender: "Femenino",
+  },
+  {
+    id: 6,
+    first_name: "José",
+    last_name: "Pérez",
+    age: 31,
+    email: "jose.perez@example.com",
+    gender: "Masculino",
+  },
+  {
+    id: 7,
+    first_name: "Lucía",
+    last_name: "Ramírez",
+    age: 24,
+    email: "lucia.ramirez@example.com",
+    gender: "Femenino",
+  },
+  {
+    id: 8,
+    first_name: "Miguel",
+    last_name: "Torres",
+    age: 29,
+    email: "miguel.torres@example.com",
+    gender: "Masculino",
+  },
+  {
+    id: 9,
+    first_name: "Elena",
+    last_name: "Navarro",
+    age: 27,
+    email: "elena.navarro@example.com",
+    gender: "Femenino",
+  },
+  {
+    id: 10,
+    first_name: "Diego",
+    last_name: "López",
+    age: 35,
+    email: "diego.lopez@example.com",
+    gender: "Masculino",
+  },
+];
+
+module.exports = {
+  users
+}
