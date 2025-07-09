@@ -10,7 +10,8 @@ app.use("/users", userRouter)
 
 app.listen(8080, () => console.log(`listening on port 8080`))
 
-mongoose.connect("mongodb+srv://main-user:BHYNh80457VJuhfo@devcluster.ozdfi.mongodb.net/74300?retryWrites=true&w=majority&appName=DevCluster")
+// CONEXTION MONGO LOCAL (RECUERDEN REMPLAZARLO POR SU CONEXTION A MONGO ATLAS)
+mongoose.connect("mongodb://127.0.0.1:27017/74300")
   .then(() => console.log("MongoDB connected success"))
   .catch((e) => console.error("MongoDB Error: \n" + e));
 
